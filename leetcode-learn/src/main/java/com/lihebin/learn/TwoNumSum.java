@@ -79,7 +79,7 @@ public class TwoNumSum {
         for(int i = 0; i < nums.length; i++) {
             int temp = target - nums[i];
             if (map.containsKey(temp)) {
-                return new int[] {i, map.get(temp)};
+                return new int[] {map.get(temp), i};
             }
             map.put(nums[i], i);
         }
@@ -90,7 +90,7 @@ public class TwoNumSum {
         int[] nums = {1,3,5,7,9};
         int target = 8;
         try {
-            System.out.println(Arrays.toString(twoSum2(nums, target)));
+            System.out.println(Arrays.toString(twoSum3(nums, target)));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
