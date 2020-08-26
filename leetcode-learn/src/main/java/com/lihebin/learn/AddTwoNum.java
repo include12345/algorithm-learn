@@ -1,5 +1,6 @@
 package com.lihebin.learn;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -35,9 +36,9 @@ public class AddTwoNum {
                 size = list2.size();
             }
             for (int i = 0; i < size; i++) {
-                if (list1.get(i) != null && list2.get(i) != null) {
+                if (list1.size() > i && list2.size() > i) {
                     carry = carry + list1.get(i) + list2.get(i);
-                } else if (list1.get(i) != null){
+                } else if (list1.size() > i){
                     carry = carry + list1.get(i);
                 } else {
                     carry = carry + list2.get(i);
@@ -50,5 +51,12 @@ public class AddTwoNum {
         }
         return resultList;
 
+    }
+
+    public static void main(String[] args) {
+        List<Integer> list1 = Arrays.asList(1,2,0,4,6);
+        List<Integer> list2 = Arrays.asList(3,4,7);
+        List<Integer> listResult = addTwoNumbers(list1, list2);
+        System.out.println(listResult);
     }
 }
